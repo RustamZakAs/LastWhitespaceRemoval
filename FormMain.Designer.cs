@@ -32,8 +32,8 @@
             btnOpenDialog = new Button();
             label1 = new Label();
             btnStart = new Button();
-            textBox1 = new TextBox();
-            lblFilters = new Label();
+            tbExtensions = new TextBox();
+            lblExtensions = new Label();
             pbFiles = new ProgressBar();
             SuspendLayout();
             // 
@@ -75,21 +75,22 @@
             btnStart.UseVisualStyleBackColor = true;
             btnStart.Click += btnStart_Click;
             // 
-            // textBox1
+            // tbExtensions
             // 
-            textBox1.Location = new Point(122, 50);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(378, 27);
-            textBox1.TabIndex = 4;
+            tbExtensions.Location = new Point(122, 50);
+            tbExtensions.Name = "tbExtensions";
+            tbExtensions.Size = new Size(378, 27);
+            tbExtensions.TabIndex = 4;
+            tbExtensions.Text = "*.*, *.txt";
             // 
-            // lblFilters
+            // lblExtensions
             // 
-            lblFilters.AutoSize = true;
-            lblFilters.Location = new Point(12, 53);
-            lblFilters.Name = "lblFilters";
-            lblFilters.Size = new Size(51, 20);
-            lblFilters.TabIndex = 5;
-            lblFilters.Text = "Filters:";
+            lblExtensions.AutoSize = true;
+            lblExtensions.Location = new Point(12, 53);
+            lblExtensions.Name = "lblExtensions";
+            lblExtensions.Size = new Size(51, 20);
+            lblExtensions.TabIndex = 5;
+            lblExtensions.Text = "Filters:";
             // 
             // pbFiles
             // 
@@ -105,8 +106,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(716, 270);
             Controls.Add(pbFiles);
-            Controls.Add(lblFilters);
-            Controls.Add(textBox1);
+            Controls.Add(lblExtensions);
+            Controls.Add(tbExtensions);
             Controls.Add(btnStart);
             Controls.Add(label1);
             Controls.Add(tbPath);
@@ -123,8 +124,8 @@
         private Button btnOpenDialog;
         private Label label1;
         private Button btnStart;
-        private TextBox textBox1;
-        private Label lblFilters;
+        private TextBox tbExtensions;
+        private Label lblExtensions;
         private ProgressBar pbFiles;
     }
 }

@@ -25,9 +25,15 @@ namespace LastWhitespaceRemoval
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            string[] files = Directory.GetFiles(this.tbPath.Text);
-            this.pbFiles.Maximum = files?.Length ?? 0;
-            foreach (string file in files ?? Array.Empty<string>())
+            string[] patterns = this.tbExtensions.Text.Split(",");
+            List<string> files = new List<string>();
+            foreach (string pattern in patterns)
+            {
+                files.AddRange(Directory.GetFiles(this.tbPath.Text, pattern.Trim()));
+            }
+            files = files.Distinct().ToList();
+            this.pbFiles.Maximum = files?.Count ?? 0;
+            foreach (string file in files ?? new List<string>())
             {
                 if (this.pbFiles.Value < this.pbFiles.Maximum)
                     this.pbFiles.Value++;
